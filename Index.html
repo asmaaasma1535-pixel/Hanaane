@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Hanane ♡</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Quicksand:wght@400;500;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #f8eee9;
+    color: #725d61;
+    font-family: 'Quicksand', sans-serif;
+    overflow-x: hidden;
+}
+
+section {
+    min-height: 100vh;
+    padding: 80px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+h1, h2 {
+    font-family: 'DM Serif Display', serif;
+    font-weight: normal;
+    color: #b97989;
+}
+
+h1 {
+    font-size: clamp(3rem, 12vw, 6rem);
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+p {
+    line-height: 1.8;
+}
+
+button {
+    border: none;
+    background: #e9b8c4;
+    color: white;
+    padding: 13px 28px;
+    border-radius: 30px;
+    font-family: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 25px;
+    transition: .3s;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    background: #d99aaa;
+}
+
+/* floating flowers */
+
+.flower {
+    position: absolute;
+    color: #e5a9b9;
+    opacity: .65;
+    font-size: 25px;
+    animation: float 5s ease-in-out infinite;
+}
+
+.f1 { top: 12%; left: 10%; }
+.f2 { top: 25%; right: 12%; animation-delay: 1s; }
+.f3 { bottom: 15%; left: 15%; animation-delay: 2s; }
+.f4 { bottom: 20%; right: 15%; animation-delay: .5s; }
+
+@keyframes float {
+    50% { transform: translateY(-12px) rotate(8deg); }
+}
+
+/* opening */
+
+#home {
+    background:
+        radial-gradient(circle at 20% 20%, #fff9f7 0, transparent 30%),
+        radial-gradient(circle at 80% 80%, #f2d5dc 0, transparent 30%),
+        #f8eee9;
+    text-align: center;
+}
+
+.subtitle {
+    margin-top: 8px;
+    font-size: 1.05rem;
+    color: #98777d;
+}
+
+.date {
+    margin-top: 15px;
+    color: #c58a98;
+    font-size: .9rem;
+}
+
+.bunny {
+    font-size: 65px;
+    margin-bottom: 15px;
+}
+
+/* cards */
+
+#reasons {
+    background: #fff8f5;
+}
+
+.intro {
+    max-width: 600px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    width: min(900px, 100%);
+}
+
+.card {
+    background: #fdf1ed;
+    padding: 30px 25px;
+    border-radius: 20px;
+    min-height: 250px;
+    box-shadow: 0 8px 25px rgba(150, 100, 110, .10);
+    position: relative;
+    transition: .3s;
+}
+
+.card:nth-child(2) {
+    transform: rotate(2deg);
+}
+
+.card:nth-child(3) {
+    transform: rotate(-2deg);
+}
+
+.card:hover {
+    transform: translateY(-8px) rotate(0);
+}
+
+.card-number {
+    color: #d496a5;
+    font-size: .8rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.card h3 {
+    color: #ad7180;
+    margin: 15px 0;
+}
+
+.card .character {
+    font-size: 45px;
+    margin-top: 15px;
+}
+
+/* english class */
+
+.story {
+    max-width: 650px;
+    text-align: center;
+}
+
+.paper {
+    background: #fffdf8;
+    width: min(600px, 100%);
+    margin-top: 35px;
+    padding: 35px;
+    transform: rotate(-1deg);
+    box-shadow: 0 8px 25px rgba(100,70,60,.12);
+    font-family: 'Quicksand', sans-serif;
+    position: relative;
+}
+
+.paper::before {
+    content: "♡";
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    color: #e2a6b5;
+}
+
+.paper p {
+    margin: 10px 0;
+}
+
+.highlight {
+    color: #c27f91;
+    font-weight: 700;
+}
+
+/* photos */
+
+#photos {
+    background: #f7e8e5;
+}
+
+.photo-grid {
+    width: min(850px, 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 35px;
+}
+
+.polaroid {
+    background: white;
+    padding: 10px 10px 35px;
+    width: 230px;
+    box-shadow: 0 7px 20px rgba(90,60,60,.15);
+}
+
+.polaroid:nth-child(1) {
+    transform: rotate(-5deg);
+}
+
+.polaroid:nth-child(2) {
+    transform: rotate(3deg);
+}
+
+.polaroid:nth-child(3) {
+    transform: rotate(-2deg);
+}
+
+.polaroid img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+}
+
+.polaroid p {
+    text-align: center;
+    margin-top: 12px;
+    font-family: 'DM Serif Display', serif;
+    color: #9e7078;
+}
+
+.no-photos {
+    margin-top: 45px;
+    text-align: center;
+    color: #99787c;
+}
+
+.no-photos strong {
+    color: #c27f91;
+}
+
+/* final letter */
+
+#letter {
+    background: #fff8f5;
+    text-align: center;
+}
+
+.letter {
+    background: #fffdfb;
+    width: min(650px, 100%);
+    padding: 45px 35px;
+    border-radius: 12px;
+    box-shadow: 0 10px 35px rgba(130,80,90,.12);
+    position: relative;
+}
+
+.letter::before {
+    content: "🌷";
+    font-size: 35px;
+    position: absolute;
+    top: -22px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.letter p {
+    margin: 20px 0;
+}
+
+.signature {
+    color: #bd7d8d;
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.5rem;
+    margin-top: 30px;
+}
+
+.audio-btn {
+    background: #c98a99;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    background: #f2d9de;
+    color: #9b737b;
+    font-size: .85rem;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HOME -->
+
+<section id="home">
+
+    <span class="flower f1">🌷</span>
+    <span class="flower f2">🌸</span>
+    <span class="flower f3">🌷</span>
+    <span class="flower f4">🌸</span>
+
+    <div class="bunny">🐰</div>
+
+    <p>For Hanane ♡</p>
+
+    <h1>Happy Birthday</h1>
+
+    <p class="subtitle">
+        A tiny little corner of the internet, made just for you.
+    </p>
+
+    <p class="date">Since 2017 · 9 years of us · 18 today</p>
+
+    <button onclick="document.getElementById('reasons').scrollIntoView({behavior:'smooth'})">
+        open ♡
+    </button>
+
+</section>
+
+
+<!-- REASONS -->
+
+<section id="reasons">
+
+    <h2>A few things about you ♡</h2>
+
+    <p class="intro">
+        Nine years later, I still have a few things to say.
+    </p>
+
+    <div class="cards">
+
+        <div class="card">
+            <span class="card-number">#01</span>
+
+            <h3>The beginning</h3>
+
+            <p>
+                Somehow, in 2017, two neighbors became friends...
+                and neither of us knew we'd still be here nine years later.
+            </p>
+
+            <div class="character">🌷</div>
+        </div>
+
+
+        <div class="card">
+            <span class="card-number">#02</span>
+
+            <h3>9 years?!</h3>
+
+            <p>
+                We've been friends for <b>9 YEARS</b>
+                and we still don't have a single picture together.
+            </p>
+
+            <div class="character">🐰</div>
+        </div>
+
+
+        <div class="card">
+            <span class="card-number">#03</span>
+
+            <h3>My favorite person</h3>
+
+            <p>
+                You are officially my favorite human.
+                Unfortunately, you cannot return me.
+            </p>
+
+            <div class="character">🧸</div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ENGLISH CLASS -->
+
+<section>
+
+    <div class="story">
+
+        <h2>The English Class Incident™</h2>
+
+        <p>
+            My favorite class.
+            Our favorite place to talk about absolutely everything.
+        </p>
+
+        <div class="paper">
+
+            <p>Things we discussed on this piece of paper:</p>
+
+            <p>school drama tmnchir </p>
+            <p>random complaints</p>
+            <p>secrets</p>
+            <p>people</p>
+            <p>life</p>
+            <p>absolutely unnecessary discussions</p>
+
+            <p class="highlight">
+                and somehow... everything else.
+            </p>
+
+            <br>
+
+            <p>
+                And let's not forget the time I tried to help you
+                with the answers...
+            </p>
+
+            <p>
+                You: <i>"whispers the answer"</i>
+            </p>
+
+            <p>
+                Me: <b>"THE ANSWER IS—"</b>
+            </p>
+
+       
+
+            <p>
+                Honestly, I was trying to help🥀.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FRIENDSHIP QUIZ STORY -->
+
+<section>
+
+    <h2>Our friendship makes no sense.</h2>
+
+    <div class="intro">
+
+        <p>
+            We knew each other's problems.
+            We knew each other's secrets.
+            We knew each other's entire life stories and trauma.
+        </p>
+
+        <br>
+
+        <p>
+            But our favorite colors?
+        </p>
+
+        <h2>Absolutely not. 😭</h2>
+
+        <p>
+            Until one day we realized we'd get absolutely destroyed
+            in a friendship quiz bsh 3rft.
+        </p>
+
+        <br>
+
+        <p>
+            <b>Hanane's favorite color:</b>
+        </p>
+
+        <h2>🌷 PINK 🌷</h2>
+
+    </div>
+
+</section>
+
+
+<!-- PHOTOS -->
+
+<section id="photos">
+
+    <h2>The Hanane Archives™</h2>
+
+    <p class="intro">
+        Apparently we have pictures of Hanane...
+        just not pictures of us together.
+    </p>
+
+    <div class="photo-grid">
+
+        <div class="polaroid">
+            <img src="hanane1.jpg">
+            <p>♡</p>
+        </div>
+
+        <div class="polaroid">
+            <img src="hanane2.jpg">
+            <p>pretty girl ♡</p>
+        </div>
+
+        <div class="polaroid">
+            <img src="hanane3.jpg">
+            <p>Hanane 🌷</p>
+        </div>
+
+    </div>
+
+    <div class="no-photos">
+
+        <p><strong>Pictures of us together:</strong></p>
+
+        <p>0 files found.</p>
+
+        <br>
+
+        <p>
+            9 years.<br>
+            Zero pictures.<br>
+            This friendship is historically undocumented.
+        </p>
+
+        <p>👈🏿👉🏿</p>
+
+    </div>
+
+</section>
+
+
+<!-- FINAL LETTER -->
+
+<section id="letter">
+
+    <h2>Before you go... ♡</h2>
+
+    <div class="letter">
+
+        <p>
+            Happy 18th Birthday, Hanane. 🌷
+        </p>
+
+        <p>
+            From two little neighbors in 2017
+            to whatever we are now...
+            I'm really glad it was you.
+        </p>
+
+        <p>
+            I hope this year brings you happiness,
+            success, beautiful memories,
+            good people,
+            and your <b>true أمير ✨</b>
+            <br>
+            <small>(not the original one. We retired him.)</small>
+        </p>
+
+        <p>
+            Thank you for always listening,
+            for understanding,
+            for letting me complain for approximately
+            four hours straight,
+            and for being someone I can always talk to.
+        </p>
+
+        <p>
+            Nine years later,
+            I still love having you in my life.
+        </p>
+
+        <p>
+            Here's to 18,
+            and hopefully many more years of us. ♡
+        </p>
+
+        <p class="signature">
+            — [Your bestfriend asmaa] ♡
+        </p>
+
+    </div>
+
+    <button class="audio-btn" onclick="playSong()">
+        🎧 Play our song
+    </button>
+
+    <audio id="song" src="those-eyes.mp3"></audio>
+
+</section>
+
+
+<footer>
+    made with ♡ for Hanane · 2017 → 2026
+</footer>
+
+
+<script>
+function playSong() {
+    const song = document.getElementById("song");
+
+    if (song.paused) {
+        song.play();
+    } else {
+        song.pause();
+    }
+}
+</script>
+
+</body>
+</html>
